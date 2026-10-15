@@ -1,0 +1,32 @@
+services:
+  dev:
+    profiles: [dev]
+    build:
+      context: .
+      target: development
+    ports:
+      - "${DEV_PORT:-5173}:5173"
+    volumes:
+      - .:/app
+      - dev_dependencies:/app/node_modules
+    init: true
+
+  game:
+    profiles: [prod]
+    image: plengsen-pop:latest
+    build:
+      context: .
+      target: production
+    ports:
+      - "${PORT:-8080}:8080"
+    restart: unless-stopped
+    read_only: true
+    tmpfs:
+      - /tmp:rw,noexec,nosuid,size=32m
+    cap_drop:
+      - ALL
+    security_opt:
+      - no-new-privileges:true
+
+volumes:
+  dev_dependencies:

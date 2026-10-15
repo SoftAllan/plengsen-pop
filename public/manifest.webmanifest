@@ -1,0 +1,15 @@
+{
+  "id": "./",
+  "name": "Plengsen Pop",
+  "short_name": "Plengsen Pop",
+  "description": "Familiens hyggelige match-3-spil · เกมจับคู่ของครอบครัว",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#fbf7ee",
+  "theme_color": "#fbf7ee",
+  "icons": [
+    { "src": "icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any" },
+    { "src": "icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any maskable" }
+  ]
+}
